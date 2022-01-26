@@ -1,0 +1,54 @@
+﻿@page
+@model CultureModel
+@{
+
+var cultbook = (List<Article>)ViewData["climatearticles"];
+    var book1 = (List<Article>)ViewData["articleclimatedata"];
+}
+
+
+   <h4 class = "section">Culture</h4>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"  >
+      <img src='~/Photos/@cultbook[0].Photo' style="max-width: 100%;padding:0px 15x" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@cultbook[0].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@cultbook[0].ArticleType</span> @cultbook[0].Title </h5>
+    </div>
+    <div class="col-sm-4" >
+      <img src='~/Photos/@cultbook[1].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@cultbook[1].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@cultbook[1].ArticleType</span> @cultbook[1].Title </h5>
+    </div>
+    <div class="col-sm-4">
+      <img src='~/Photos/@cultbook[2].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@cultbook[2].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@cultbook[2].ArticleType</span> @cultbook[2].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+<br>
+
+             <h4 class = "section">Headlines</h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" >
+      <img src='~/Photos/@book1[0].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[0].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book1[0].ArticleType</span> @book1[0].Title </h5>
+    </div>
+    <div class="col-sm-6" >
+      <img src='~/Photos/@book1[1].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[1].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book1[1].ArticleType</span> @book1[1].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+
+
+<br>

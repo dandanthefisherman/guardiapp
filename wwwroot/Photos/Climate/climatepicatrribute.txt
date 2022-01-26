@@ -1,0 +1,2 @@
+climate = https://creativecommons.org/licenses/by-sa/2.0
+climate2.jpeg = https://creativecommons.org/licenses/by-sa/2.0

@@ -1,0 +1,113 @@
+﻿@page
+@model SportModel
+@{
+    var book = (List<Article>)ViewData["sportarticles"];
+   var book1 = (List<Article>)ViewData["articlesportdata"];
+}
+
+  <h4 class = "section">Sports Headines</h4>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"  >
+      <img src='~/Photos/@book[0].Photo' style="max-width: 100%;padding:0px 15x" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[0].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@book[0].ArticleType</span> @book[0].Title </h5>
+    </div>
+    <div class="col-sm-4" >
+      <img src='~/Photos/@book[1].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[1].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@book[1].ArticleType</span> @book[1].Title </h5>
+    </div>
+    <div class="col-sm-4">
+      <img src='~/Photos/@book[2].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[2].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book[2].ArticleType</span> @book[2].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+<br>
+
+             <h4 class = "section">Headlines</h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" >
+      <img src='~/Photos/@book1[0].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[0].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book1[0].ArticleType</span> @book1[0].Title </h5>
+    </div>
+    <div class="col-sm-6" >
+      <img src='~/Photos/@book1[1].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[1].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book1[1].ArticleType</span> @book1[1].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+
+
+<br>
+ <h4 class = "section"> Other News</h4>
+<br>
+<div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[2].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[2].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book1[2].ArticleType</span></p>
+            <p class="card-text">@book1[2].Title</p>
+            
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[3].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[3].ArticleNumber></a>
+           <p class="card-text"><span class="badge badge-secondary">@book1[3].ArticleType</span></p>
+            
+            <p class="card-text">@book1[3].Title</p>
+            
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[4].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[4].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book1[4].ArticleType</span></p>
+            <p class="card-text">@book1[4].Title</p>
+            
+        </div>
+    </div>
+     <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[5].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[5].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book1[5].ArticleType</span></p>
+            <p class="card-text">@book1[5].Title</p>
+        </div>
+    </div>
+  </div>
+<br>
+  <div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[6].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[6].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book1[6].ArticleType</span></p>
+            <p class="card-text">@book1[6].Title</p>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book1[7].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book1[7].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book1[7].ArticleType</span></p>
+            <p class="card-text">@book1[7].Title</p>
+        </div>
+    </div>
+   
+     
+  </div>

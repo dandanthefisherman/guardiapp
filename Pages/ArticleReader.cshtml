@@ -1,0 +1,93 @@
+﻿@page
+@model ArticleReaderModel
+@{
+
+    ViewData["Title"] = "Article";
+
+    var book = (Article)ViewData["articlepassed"];
+    var randombook = (List<Article>)ViewData["randomarticles"];
+}
+<h1><span class="badge badge-secondary">@book.ArticleType</span>
+<h1>@book.Title</h1>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" >
+      <img src='~/Photos/@book.Photo' style="max-width: 100%;"  width="500" height="450">
+     
+      
+    </div>
+    <div class="col-sm-6" >
+      <p>@book.Date</p>
+      <h5 class ="arti">@book.Subtitle </h5>
+      <h5 class ="arti">@book.MainBody </h6>
+      <h5 class ="arti">@book.Paragraph </h6>
+      <p>This satirical fake news article was written by the esteemed journalist @book.Author</p>
+    <a href='@book.PhotoLicence'>Click here to see the common licence of this photograph</a>
+
+    </div>
+    
+  </div>
+  
+</div> 
+
+<br>
+ <h4 class = "section">Archive</h4>
+<br>
+ <div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[5].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[5].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[5].ArticleType</span></p>
+            <p class="card-text">@randombook[5].Title</p>
+            
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[6].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[6].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[6].ArticleType</span></p>
+            <p class="card-text">@randombook[6].Title</p>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[0].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[0].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[0].ArticleType</span></p>
+            <p class="card-text">@randombook[0].Title</p>
+        </div>
+    </div>
+     <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[2].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[2].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[2].ArticleType</span></p>
+            <p class="card-text">@randombook[2].Title</p>
+        </div>
+    </div>
+  </div>
+<br>
+  <div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[3].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[3].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[3].ArticleType</span></p>
+            <p class="card-text">@randombook[3].Title</p>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@randombook[4].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@randombook[4].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@randombook[4].ArticleType</span></p>
+            <p class="card-text">@randombook[4].Title</p>
+        </div>
+    </div>
+   
+     
+  </div>

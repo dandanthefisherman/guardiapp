@@ -1,0 +1,215 @@
+﻿@page
+@model IndexModel
+@using Newtonsoft.Json
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+ @{
+    var book = (List<Article>)ViewData["articleindexdata"];
+    var head1 = book[3];
+    var head2 = book[4];
+    var covid= (List<Article>)ViewData["covidarticles"];
+    var sport =(List<Article>)ViewData["sportarticles"];
+    var hit1 = (Article)ViewData["hit1"];
+    var hit2 = (Article)ViewData["hit2"];
+    var hit3 = (Article)ViewData["hit3"];
+    // Dictionary<string, string> article1 = 
+    //    new Dictionary<string, string> { { "passedObject", JsonConvert.SerializeObject(book[0]) } };
+
+   // Dictionary<string, string> article2 = 
+    //    new Dictionary<string, string> { { "passedObject", JsonConvert.SerializeObject(book[1]) } };
+}
+
+
+  <div>
+  
+ 
+
+<br>
+      <h4 class = "section">Breaking News</h4>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"  >
+      <img src='~/Photos/@book[0].Photo' style="max-width: 100%;padding:0px 15x" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[0].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@book[0].ArticleType</span> @book[0].Title </h5>
+    </div>
+    <div class="col-sm-4" >
+      <img src='~/Photos/@book[1].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[1].ArticleNumber></a>
+      <h5 ><span class="badge badge-secondary">@book[1].ArticleType</span> @book[1].Title </h5>
+    </div>
+    <div class="col-sm-4">
+      <img src='~/Photos/@book[2].Photo' style="max-width: 100%;padding:0px 15x;" width="500" height="260">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[2].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@book[2].ArticleType</span> @book[2].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+<br>
+
+             <h4 class = "section">Headlines</h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" >
+      <img src='~/Photos/@head1.Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@head1.ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@head1.ArticleType</span> @head1.Title </h5>
+    </div>
+    <div class="col-sm-6" >
+      <img src='~/Photos/@head2.Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@head2.ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@head2.ArticleType</span> @head2.Title </h5>
+    </div>
+    
+  </div>
+</div> 
+<br>
+       <h4 class = "section">Covid </h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@covid[0].Photo' style="max-width: 100%;" width="320" height="236">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@covid[0].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@covid[0].ArticleType</span> @covid[0].Title </h5>
+    </div>
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@covid[1].Photo' style="max-width: 100%;" width="320" height="236">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@covid[1].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@covid[1].ArticleType</span> @covid[1].Title </h5>
+    </div>
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@covid[2].Photo' style="max-width: 100%;"  width="320" height="236">        
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@covid[2].ArticleNumber></a>
+     <h5><span class="badge badge-secondary">@covid[2].ArticleType</span> @covid[2].Title </h5>
+    </div>
+  </div>
+</div> 
+
+<br>
+      <h4 class = "section">Sport</h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" >
+      <img src='~/Photos/@sport[0].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@sport[0].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@sport[0].ArticleType</span> @sport[0].Title </h5>
+    </div>
+    <div class="col-sm-6" >
+      <img src='~/Photos/@sport[1].Photo' style="max-width: 100%;"  width="500" height="345">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@sport[1].ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@sport[1].ArticleType</span> @sport[1].Title </h5>
+    </div>
+    
+  </div>
+</div> 
+<br>
+      <h4 class = "section">Greatest Hits</h4>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@hit1.Photo' style="max-width: 100%;" width="320" height="236">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@hit1.ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@hit1.ArticleType</span> @hit1.Title </h5>
+    </div>
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@hit2.Photo' style="max-width: 100%;" width="320" height="236">
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@hit2.ArticleNumber></a>
+      <h5><span class="badge badge-secondary">@hit2.ArticleType</span> @hit2.Title </h5>
+    </div>
+    <div class="col-sm-4" style= "border-bottom-style: solid,border-color: blue;">
+      <img src='~/Photos/@hit3.Photo' style="max-width: 100%;"  width="320" height="236">        
+      <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@hit3.ArticleNumber></a>
+     <h5><span class="badge badge-secondary">@hit3.ArticleType</span> @hit3.Title </h5>
+    </div>
+  </div>
+</div>
+
+   </div>
+ </br>  
+
+<br>
+ <h4 class = "section">Other News</h4>
+<br>
+ <div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[5].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[5].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[5].ArticleType</span></p>
+            <p class="card-text">@book[5].Title</p>
+            
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[6].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[6].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[6].ArticleType</span></p>
+            <p class="card-text">@book[6].Title</p>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[7].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[7].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[7].ArticleType</span></p>
+            <p class="card-text">@book[7].Title</p>
+        </div>
+    </div>
+     <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[7].Photo" alt="Card image cap" style="height: 15rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[7].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[7].ArticleType</span></p>
+            <p class="card-text">@book[7].Title</p>
+        </div>
+    </div>
+  </div>
+<br>
+  <div class="card-deck">
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[7].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+            <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[7].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[7].ArticleType</span></p>
+            <p class="card-text">@book[7].Title</p>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <img class="card-img-top img-fluid" src="~/Photos/@book[7].Photo" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+           <a asp-page="/ArticleReader" class="stretched-link" asp-route-ArticleNo=@book[7].ArticleNumber></a>
+            <p class="card-text"><span class="badge badge-secondary">@book[7].ArticleType</span></p>
+            <p class="card-text">@book[7].Title</p>
+        </div>
+    </div>
+   
+     
+  </div>
+         
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+    

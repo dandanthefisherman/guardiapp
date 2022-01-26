@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Guardi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&family=Nunito">
+   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+ 
+        <style>
+.section{border-bottom-style: solid ; border-color: #1861ac;border-width: thin;}
+
+@@media (min-width: 544px) {  
+  h1 {font-size:1rem;} /*1rem = 16px*/
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@@media (min-width: 768px) {  
+  h1 {font-size:2rem;} /*1rem = 16px*/
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@@media (min-width: 992px) { 
+  h1 {font-size:2.5rem;} /*1rem = 16px*/
+}
+            
+
+            body {
+  background-color: white;
+
+
+
+  
+}
+      .cafu h1 {
+        font-family: 'Abril Fatface', serif;
+        font-size: 48px;
+        
+      }
+      .cafu p {
+        font-family: 'Nunito', serif;
+        font-size: 10px;
+        
+      }
+
+      .card-img-top {
+   
+    height: 15vw;
+    object-fit: cover;
+}
+
+h4,h6 {
+  
+  font-family:  serif;
+  /* border-bottom-style: solid;*/
+  
+}
+
+/*h5{border-bottom-style: solid ; border-color: #1861ac;border-width: thin;}*/
+.arti h5{border-bottom-style: none;}
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="p-3 bg-info text-white text-center cafu">
+            
+            
+  <h1>Guardipendent</h1>
+  <p>Hysterical Liberal Fake Satirical News Website Of The Year</p> 
+  
+</div>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Guardipendent</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Politics">Politics</a>
+                        </li>
+          
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Culture">Culture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Sport">Sport</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Climate">Climate Crisis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class = "nav-link" href ="https://www.facebook.com/Guardipendent/"><i class="icon-facebook"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class = "nav-link" href ="https://www.twitter.com/Guardipendent/"><i class="icon-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class = "nav-link" href ="https://www.instagram.com/Guardipendent/"><i class="icon-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - guardi - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+ 
